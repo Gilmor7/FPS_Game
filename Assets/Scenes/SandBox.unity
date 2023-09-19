@@ -976,7 +976,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetTransform: {fileID: 8997996947477819646}
   _agent: {fileID: 916270048}
+  _animator: {fileID: 916270055}
   _chaseRange: 15
+--- !u!95 &916270055 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4819745799990244931, guid: 37ea481c4034c904a91a5f732382d7ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 2557997803531173312}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &917554253 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8379900264220769560, guid: 09aade0ecefd01e4b8f7661acf64f5c2,
@@ -1680,6 +1687,8 @@ MonoBehaviour:
   _range: 100
   _damage: 25
   _muzzleFlash: {fileID: 103940026}
+  _hitEffect: {fileID: 2954720209692798342, guid: 1b837ec0a2c7b164d80d3e8404e09a38,
+    type: 3}
 --- !u!1001 &2557997803531173312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1695,7 +1704,7 @@ PrefabInstance:
     - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
@@ -1777,6 +1786,11 @@ PrefabInstance:
       propertyPath: _targetTransform
       value: 
       objectReference: {fileID: 8997996947477819646}
+    - target: {fileID: 8592252973934026816, guid: 37ea481c4034c904a91a5f732382d7ae,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6634297841157389658, guid: 37ea481c4034c904a91a5f732382d7ae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 37ea481c4034c904a91a5f732382d7ae, type: 3}

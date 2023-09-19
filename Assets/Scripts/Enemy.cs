@@ -3,9 +3,13 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    private static readonly int AttackAnimationParam = Animator.StringToHash("attack");
+    private static readonly int MoveAnimationTrigger = Animator.StringToHash("moveTrigger");
+
     [Header("Components")]
     [SerializeField] private Transform _targetTransform;
     [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private Animator _animator;
 
     [Header("Agent Config")] 
     [SerializeField] private float _chaseRange = 15f;
@@ -41,12 +45,14 @@ public class Enemy : MonoBehaviour
 
     private void ChaseTarget()
     {
+        _animator.SetBool(AttackAnimationParam, false);
+        _animator.SetTrigger(MoveAnimationTrigger);
         _agent.SetDestination(_targetTransform.position);
     }
 
     private void AttackTarget()
     {
-        Debug.Log("EnemyAttacking target");
+        _animator.SetBool(AttackAnimationParam, true);
     }
     
     void OnDrawGizmosSelected()

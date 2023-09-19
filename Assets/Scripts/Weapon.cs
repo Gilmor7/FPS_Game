@@ -1,7 +1,6 @@
 using Managers;
 using Common;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Weapon : MonoBehaviour
 {
@@ -11,6 +10,7 @@ public class Weapon : MonoBehaviour
     
     [Header("Effects")]
     [SerializeField] private ParticleSystem _muzzleFlash;
+    [SerializeField] private GameObject _hitEffect;
 
     public float Damage => _damage;
 
@@ -34,7 +34,7 @@ public class Weapon : MonoBehaviour
 
         if (Physics.Raycast(FPSRaycaster.GenerateRay(), out hit, _range))
         {
-            Debug.Log("I hit this thing: " + hit.transform.name);
+            CreateHitEffect(hit);
             bool hitAnEnemy = hit.transform.gameObject.CompareTag(GameManager.Instance.EnemyTag);
 
             if (hitAnEnemy)
@@ -46,5 +46,11 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+    }
+
+    private void CreateHitEffect(RaycastHit hit)
+    {
+        GameObject effect = Instantiate(_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        Destroy(effect, 0.1f);
     }
 }
