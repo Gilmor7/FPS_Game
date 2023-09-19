@@ -649,6 +649,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon_M4
       objectReference: {fileID: 0}
+    - target: {fileID: 4081966721951461634, guid: d585143677710b648be9f506127c0566,
+        type: 3}
+      propertyPath: m_Name
+      value: MuzzleFlash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d585143677710b648be9f506127c0566, type: 3}
 --- !u!4 &6241807952334651144 stripped
