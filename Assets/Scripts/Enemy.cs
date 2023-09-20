@@ -1,3 +1,4 @@
+using Managers;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,16 +8,31 @@ public class Enemy : MonoBehaviour
     private static readonly int MoveAnimationTrigger = Animator.StringToHash("moveTrigger");
 
     [Header("Components")]
-    [SerializeField] private Transform _targetTransform;
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Animator _animator;
 
     [Header("Agent Config")] 
     [SerializeField] private float _chaseRange = 15f;
+    [SerializeField] private float _turnSpeed = 6f;
 
+    private Transform _targetTransform;
     private float _distanceFromTarget = Mathf.Infinity;
     private bool _isProvoked = false;
 
+    void Start()
+    {
+        var player = GameObject.FindGameObjectWithTag(GameManager.Instance.PlayerTag);
+
+        if (player != null)
+        {
+            _targetTransform = player.GetComponent<Transform>();
+        }
+        else
+        {
+            Debug.LogError("Player object not found with tag 'Player'.");
+        }
+    }
+    
     void Update()
     {
         _distanceFromTarget = Vector3.Distance(_targetTransform.position, transform.position);
@@ -32,6 +48,7 @@ public class Enemy : MonoBehaviour
 
     private void EngageTarget()
     {
+        FaceTarget();
         if (_distanceFromTarget > _agent.stoppingDistance)
         {
             ChaseTarget();
@@ -53,6 +70,14 @@ public class Enemy : MonoBehaviour
     private void AttackTarget()
     {
         _animator.SetBool(AttackAnimationParam, true);
+    }
+
+    private void FaceTarget()
+    {
+        Vector3 direction = (_targetTransform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * _turnSpeed);
     }
     
     void OnDrawGizmosSelected()
