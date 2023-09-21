@@ -1,16 +1,16 @@
 using System;
-using Common;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private Camera _camera;
-
         public static GameManager Instance { get; private set; }
         public string EnemyTag => "Enemy"; 
-        public string PlayerTag => "Player"; 
+        public string PlayerTag => "Player";
+
+        private int _currentLevel = 0;
 
         protected void Awake()
         {
@@ -23,11 +23,6 @@ namespace Managers
             {
                 Destroy(gameObject);
             }
-        }
-
-        private void Start()
-        {
-            FPSRaycaster.FpCamera = _camera;
         }
 
         public void EnemyGotHit(Weapon weapon, EnemyHealth enemyHealth)
@@ -60,9 +55,37 @@ namespace Managers
             }
         }
 
-        private void OnDestroy()
+        public void HandlePlayerDeath()
         {
-            FPSRaycaster.FpCamera = null;
+            PlayerHUDManager.Instance.SetGameOverScreen();
+            StopGame();
+        }
+
+        private void StopGame()
+        {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        private void StartGame()
+        {
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        public void RestartLevel()
+        {
+            SceneManager.LoadSceneAsync(_currentLevel);
+            PlayerHUDManager.Instance.SetNewLevelScreen();
+            StartGame();
+        }
+
+        public void QuitLevel()
+        {
+            Application.Quit();
+            //In the future goes back to Main Menu
         }
     }
 }
