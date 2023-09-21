@@ -1,5 +1,4 @@
 using Managers;
-using Common;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -7,6 +6,7 @@ public class Weapon : MonoBehaviour
     [Header("Weapon Configurations")]
     [SerializeField] private float _range = 100f;
     [SerializeField] private float _damage = 25f;
+    [SerializeField] private Camera _raySourceCamera;
     
     [Header("Effects")]
     [SerializeField] private ParticleSystem _muzzleFlash;
@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     public void Shoot()
     {
         PlayMuzzleFlush();
-        ShootARaycast();
+        ShootRaycast();
     }
 
     private void PlayMuzzleFlush()
@@ -28,11 +28,11 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void ShootARaycast()
+    private void ShootRaycast()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(FPSRaycaster.GenerateRay(), out hit, _range))
+        if (Physics.Raycast(_raySourceCamera.transform.position, _raySourceCamera.transform.forward, out hit, _range))
         {
             CreateHitEffect(hit);
             bool hitAnEnemy = hit.transform.gameObject.CompareTag(GameManager.Instance.EnemyTag);

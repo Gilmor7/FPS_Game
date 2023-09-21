@@ -22,15 +22,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         var player = GameObject.FindGameObjectWithTag(GameManager.Instance.PlayerTag);
-
-        if (player != null)
-        {
-            _targetTransform = player.GetComponent<Transform>();
-        }
-        else
-        {
-            Debug.LogError("Player object not found with tag 'Player'.");
-        }
+        _targetTransform = player.GetComponent<Transform>();
     }
     
     void Update()
