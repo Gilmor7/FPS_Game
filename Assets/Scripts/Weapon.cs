@@ -1,23 +1,46 @@
+using Cinemachine;
 using Managers;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [Header("Weapon Configurations")]
+    [Header("Damage Configurations")]
+    [SerializeField] private Camera _raySourceCamera;
     [SerializeField] private float _range = 100f;
     [SerializeField] private float _damage = 25f;
-    [SerializeField] private Camera _raySourceCamera;
     
+    [Header("Zoom Configurations")]
+    [SerializeField] private CinemachineVirtualCamera _cinemachineCamera;
+    [SerializeField] private float _zoomOutFOV = 40f;
+    [SerializeField] private float _zoomInFOV = 20f;
+    private bool _isZoomedIn = false;
+
     [Header("Effects")]
     [SerializeField] private ParticleSystem _muzzleFlash;
     [SerializeField] private GameObject _hitEffect;
-
+    
     public float Damage => _damage;
 
     public void Shoot()
     {
         PlayMuzzleFlush();
         ShootRaycast();
+    }
+
+    public bool ToggleZoom()
+    {
+        if (_isZoomedIn)
+        {
+            _isZoomedIn = false;
+            _cinemachineCamera.m_Lens.FieldOfView = _zoomOutFOV;
+        }
+        else
+        {
+            _isZoomedIn = true;
+            _cinemachineCamera.m_Lens.FieldOfView = _zoomInFOV;
+        }
+
+        return _isZoomedIn;
     }
 
     private void PlayMuzzleFlush()

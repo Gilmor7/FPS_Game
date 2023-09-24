@@ -312,7 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3476f5d35b4b8a48aa370d93b40c82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fpsController: {fileID: 6626573493426754205}
   _currentWeapon: {fileID: 0}
+  _zoomInRotationsSpeed: 0.9
 --- !u!1 &7402303315167413900
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,7 +428,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20000005
+      value: 0.19999996
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -436,7 +438,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.0000000037252903
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -490,6 +492,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+--- !u!20 &5808015288015002360 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
+    type: 3}
+  m_PrefabInstance: {fileID: 3198346678225986845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5808015288015002362 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74,
@@ -610,6 +618,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3198346678554624442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6195594009717740737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8762286023885395323, guid: 9c489a8547f4d9e4387da15a4ff82c81,
+    type: 3}
+  m_PrefabInstance: {fileID: 3198346678554624442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8569240760474453307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -682,6 +702,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuzzleFlash
       objectReference: {fileID: 0}
+    - target: {fileID: 5744600754341765678, guid: d585143677710b648be9f506127c0566,
+        type: 3}
+      propertyPath: _raySourceCamera
+      value: 
+      objectReference: {fileID: 5808015288015002360}
+    - target: {fileID: 5744600754341765678, guid: d585143677710b648be9f506127c0566,
+        type: 3}
+      propertyPath: _cinemachineCamera
+      value: 
+      objectReference: {fileID: 6195594009717740737}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d585143677710b648be9f506127c0566, type: 3}
 --- !u!4 &6241807952334651144 stripped

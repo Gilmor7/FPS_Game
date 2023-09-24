@@ -3134,8 +3134,8 @@ Transform:
   - {fileID: 990603984}
   - {fileID: 1521510107}
   - {fileID: 151694594}
-  - {fileID: 890908145}
   - {fileID: 2049171472}
+  - {fileID: 890908145}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5038,6 +5038,11 @@ PrefabInstance:
       propertyPath: _currentWeapon
       value: 
       objectReference: {fileID: 2123286108}
+    - target: {fileID: 2501294926547737181, guid: 91b4052d50c511940a402d1e0acf836c,
+        type: 3}
+      propertyPath: _zoomInRotationsSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4131178420876584725, guid: 91b4052d50c511940a402d1e0acf836c,
         type: 3}
       propertyPath: _hitEffect
