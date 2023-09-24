@@ -71,6 +71,11 @@ public class Enemy : MonoBehaviour
         
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * _turnSpeed);
     }
+
+    public void OnDamageTaken()
+    {
+        _isProvoked = true;
+    }
     
     void OnDrawGizmosSelected()
     {
