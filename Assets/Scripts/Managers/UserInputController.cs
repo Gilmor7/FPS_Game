@@ -6,7 +6,7 @@ namespace Managers
 {
     public class UserInputController : MonoBehaviour
     {
-        private const string FireButton = "Fire1";
+        private const int FireButton = (int)MouseButton.LeftMouse;
         private const int WeaponZoomButton = (int)MouseButton.RightMouse;
 
         private PlayerController _playerController;
@@ -19,7 +19,7 @@ namespace Managers
 
         void Update()
         {
-            if (Input.GetButtonDown(FireButton))
+            if (Input.GetMouseButtonDown(FireButton))
             {
                 _playerController.FireButtonClicked();
             }

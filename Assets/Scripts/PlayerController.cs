@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
 
     public void FireButtonClicked()
     {
-        _currentWeapon.Shoot();
+        if (_currentWeapon.CanShoot)
+        {
+            _currentWeapon.Shoot();
+        }
     }
 
     public void ZoomButtonClicked()

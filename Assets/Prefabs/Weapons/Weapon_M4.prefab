@@ -543,8 +543,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _raySourceCamera: {fileID: 0}
-  _range: 100
+  _range: 50
   _damage: 25
+  _timeBetweenShots: 0.5
   _ammoSlot: {fileID: 0}
   _cinemachineCamera: {fileID: 0}
   _zoomOutFOV: 40

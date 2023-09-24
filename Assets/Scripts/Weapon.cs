@@ -1,6 +1,7 @@
 using Cinemachine;
 using Managers;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class Weapon : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Camera _raySourceCamera;
     [SerializeField] private float _range = 100f;
     [SerializeField] private float _damage = 25f;
+    [SerializeField] private float _timeBetweenShots = 0.5f;
     [SerializeField] private Ammo _ammoSlot;
     
     [Header("Zoom Configurations")]
@@ -19,11 +21,16 @@ public class Weapon : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private ParticleSystem _muzzleFlash;
     [SerializeField] private GameObject _hitEffect;
+
+    private bool _canShoot = true;
     
     public float Damage => _damage;
+    public bool CanShoot => _canShoot;
 
-    public void Shoot()
+    public async void Shoot()
     {
+        _canShoot = false;
+        
         if (_ammoSlot.IsEmpty() == false)
         {
             PlayMuzzleFlush();
@@ -34,6 +41,9 @@ public class Weapon : MonoBehaviour
         {
             //Play empty slot sound effect
         }
+
+        await UniTask.Delay((int)_timeBetweenShots * 1000);
+        _canShoot = true;
     }
 
     public bool ToggleZoom()
