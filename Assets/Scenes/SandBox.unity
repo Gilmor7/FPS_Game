@@ -5045,6 +5045,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4131178420876584725, guid: 91b4052d50c511940a402d1e0acf836c,
         type: 3}
+      propertyPath: _ammoSlot
+      value: 
+      objectReference: {fileID: 8997996947477819654}
+    - target: {fileID: 4131178420876584725, guid: 91b4052d50c511940a402d1e0acf836c,
+        type: 3}
       propertyPath: _hitEffect
       value: 
       objectReference: {fileID: 2954720209692798342, guid: 1b837ec0a2c7b164d80d3e8404e09a38,
@@ -5257,3 +5262,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3198346678549493982}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8997996947477819654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6726256600867704613, guid: 91b4052d50c511940a402d1e0acf836c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3198346678549493982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6b1a267147f334093997ed1eff35d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

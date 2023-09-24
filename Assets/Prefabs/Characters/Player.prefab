@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 6626573493426754198}
   - component: {fileID: 7689775691107833585}
   - component: {fileID: 2501294926547737181}
+  - component: {fileID: 6726256600867704613}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -315,6 +316,19 @@ MonoBehaviour:
   _fpsController: {fileID: 6626573493426754205}
   _currentWeapon: {fileID: 0}
   _zoomInRotationsSpeed: 0.9
+--- !u!114 &6726256600867704613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626573493426754202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6b1a267147f334093997ed1eff35d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amount: 10
 --- !u!1 &7402303315167413900
 GameObject:
   m_ObjectHideFlags: 0

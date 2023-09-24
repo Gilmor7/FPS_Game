@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    [Header("Damage Configurations")]
+    [Header("Weapon Configurations")]
     [SerializeField] private Camera _raySourceCamera;
     [SerializeField] private float _range = 100f;
     [SerializeField] private float _damage = 25f;
+    [SerializeField] private Ammo _ammoSlot;
     
     [Header("Zoom Configurations")]
     [SerializeField] private CinemachineVirtualCamera _cinemachineCamera;
@@ -23,8 +24,16 @@ public class Weapon : MonoBehaviour
 
     public void Shoot()
     {
-        PlayMuzzleFlush();
-        ShootRaycast();
+        if (_ammoSlot.IsEmpty() == false)
+        {
+            PlayMuzzleFlush();
+            ShootRaycast();
+            _ammoSlot.ReduceCurrentAmount();
+        }
+        else
+        {
+            //Play empty slot sound effect
+        }
     }
 
     public bool ToggleZoom()
