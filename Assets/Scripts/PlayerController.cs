@@ -1,6 +1,6 @@
-using System;
 using StarterAssets;
 using UnityEngine;
+
 public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour
 
     public void ZoomButtonClicked()
     {
-        bool isZoomedIn = _currentWeapon.ToggleZoom();
-        _fpsController.RotationSpeed = isZoomedIn ? _zoomInRotationsSpeed : _zoomOutRotationsSpeed;
+        if (_currentWeapon.IsWeaponCanZoom())
+        {
+            bool isZoomedIn = _currentWeapon.ToggleZoom();
+            _fpsController.RotationSpeed = isZoomedIn ? _zoomInRotationsSpeed : _zoomOutRotationsSpeed;
+        }
     }
 }

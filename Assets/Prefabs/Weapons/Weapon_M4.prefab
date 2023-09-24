@@ -500,6 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2338305346893625907}
   - component: {fileID: 5744600754341765678}
+  - component: {fileID: 3629095853907923032}
   m_Layer: 0
   m_Name: Weapon_M4
   m_TagString: Untagged
@@ -547,12 +548,24 @@ MonoBehaviour:
   _damage: 25
   _timeBetweenShots: 0.5
   _ammoSlot: {fileID: 0}
-  _cinemachineCamera: {fileID: 0}
-  _zoomOutFOV: 40
-  _zoomInFOV: 20
   _muzzleFlash: {fileID: 4206497877202554262}
   _hitEffect: {fileID: 2954720209692798342, guid: 1b837ec0a2c7b164d80d3e8404e09a38,
     type: 3}
+--- !u!114 &3629095853907923032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114385370449305737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95177575be2e32429fe54d848489e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineCamera: {fileID: 0}
+  _zoomOutFOV: 40
+  _zoomInFOV: 20
 --- !u!1 &3137486719199350773
 GameObject:
   m_ObjectHideFlags: 0

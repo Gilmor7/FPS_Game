@@ -1,4 +1,4 @@
-using Cinemachine;
+using System;
 using Managers;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
@@ -11,21 +11,20 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float _damage = 25f;
     [SerializeField] private float _timeBetweenShots = 0.5f;
     [SerializeField] private Ammo _ammoSlot;
-    
-    [Header("Zoom Configurations")]
-    [SerializeField] private CinemachineVirtualCamera _cinemachineCamera;
-    [SerializeField] private float _zoomOutFOV = 40f;
-    [SerializeField] private float _zoomInFOV = 20f;
-    private bool _isZoomedIn = false;
+    private WeaponZoom _weaponZoom;
+    private bool _canShoot = true;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem _muzzleFlash;
     [SerializeField] private GameObject _hitEffect;
-
-    private bool _canShoot = true;
     
     public float Damage => _damage;
     public bool CanShoot => _canShoot;
+
+    private void Start()
+    {
+        _weaponZoom = GetComponentInParent<WeaponZoom>();
+    }
 
     public async void Shoot()
     {
@@ -42,24 +41,30 @@ public class Weapon : MonoBehaviour
             //Play empty slot sound effect
         }
 
-        await UniTask.Delay((int)_timeBetweenShots * 1000);
+        await UniTask.Delay((int)(_timeBetweenShots * 1000));
         _canShoot = true;
     }
 
     public bool ToggleZoom()
     {
-        if (_isZoomedIn)
+        bool zoomInStatus;
+        
+        if (_weaponZoom != null)
         {
-            _isZoomedIn = false;
-            _cinemachineCamera.m_Lens.FieldOfView = _zoomOutFOV;
+            _weaponZoom.ToggleZoom();
+            zoomInStatus = _weaponZoom.IsZoomedIn;
         }
         else
         {
-            _isZoomedIn = true;
-            _cinemachineCamera.m_Lens.FieldOfView = _zoomInFOV;
+            zoomInStatus = false;
         }
 
-        return _isZoomedIn;
+        return zoomInStatus;
+    }
+
+    public bool IsWeaponCanZoom()
+    {
+        return _weaponZoom != null;
     }
 
     private void PlayMuzzleFlush()

@@ -802,6 +802,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon_M4
       objectReference: {fileID: 0}
+    - target: {fileID: 3114385370449305737, guid: d585143677710b648be9f506127c0566,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3629095853907923032, guid: d585143677710b648be9f506127c0566,
+        type: 3}
+      propertyPath: _cinemachineCamera
+      value: 
+      objectReference: {fileID: 6195594009717740737}
     - target: {fileID: 4081966721951461634, guid: d585143677710b648be9f506127c0566,
         type: 3}
       propertyPath: m_Name
