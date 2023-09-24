@@ -61,6 +61,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6241807952334651144}
+  - {fileID: 8094713986421639909}
   m_Father: {fileID: 5808015288015002367}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -427,6 +428,96 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1787995585062996865
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1495296024704190731}
+    m_Modifications:
+    - target: {fileID: 1643433899209223869, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: _ammoSlot
+      value: 
+      objectReference: {fileID: 6726256600867704613}
+    - target: {fileID: 1643433899209223869, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: _raySourceCamera
+      value: 
+      objectReference: {fileID: 5808015288015002360}
+    - target: {fileID: 1643433899209223869, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: _cinemachineCamera
+      value: 
+      objectReference: {fileID: 6195594009717740737}
+    - target: {fileID: 7191649739737766878, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.73657566
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.029468838
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.67494714
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.032159597
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f24fa6868b1cca1428fb34d44c69b5e4, type: 3}
+--- !u!4 &8094713986421639909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7531724990231200100, guid: f24fa6868b1cca1428fb34d44c69b5e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1787995585062996865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3198346678225986845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -716,6 +807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuzzleFlash
       objectReference: {fileID: 0}
+    - target: {fileID: 5744600754341765678, guid: d585143677710b648be9f506127c0566,
+        type: 3}
+      propertyPath: _ammoSlot
+      value: 
+      objectReference: {fileID: 6726256600867704613}
     - target: {fileID: 5744600754341765678, guid: d585143677710b648be9f506127c0566,
         type: 3}
       propertyPath: _raySourceCamera
