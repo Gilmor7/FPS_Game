@@ -348,9 +348,6 @@ MonoBehaviour:
   _damage: 15
   _timeBetweenShots: 0.2
   _ammoSlot: {fileID: 0}
-  _cinemachineCamera: {fileID: 0}
-  _zoomOutFOV: 40
-  _zoomInFOV: 25
   _muzzleFlash: {fileID: 1557223824730187240}
   _hitEffect: {fileID: 2954720209692798342, guid: 1b837ec0a2c7b164d80d3e8404e09a38,
     type: 3}
@@ -459,6 +456,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7531724990231200100}
     m_Modifications:
+    - target: {fileID: 5236544944481619079, guid: 66b467f6783286d4f867b6a5440a27d9,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236544944481619079, guid: 66b467f6783286d4f867b6a5440a27d9,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5360677430766697929, guid: 66b467f6783286d4f867b6a5440a27d9,
         type: 3}
       propertyPath: m_RootOrder
@@ -467,17 +474,17 @@ PrefabInstance:
     - target: {fileID: 5360677430766697929, guid: 66b467f6783286d4f867b6a5440a27d9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6693
+      value: -0.1988
       objectReference: {fileID: 0}
     - target: {fileID: 5360677430766697929, guid: 66b467f6783286d4f867b6a5440a27d9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0867
+      value: 0.0732
       objectReference: {fileID: 0}
     - target: {fileID: 5360677430766697929, guid: 66b467f6783286d4f867b6a5440a27d9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0007
+      value: 0.0013
       objectReference: {fileID: 0}
     - target: {fileID: 5360677430766697929, guid: 66b467f6783286d4f867b6a5440a27d9,
         type: 3}

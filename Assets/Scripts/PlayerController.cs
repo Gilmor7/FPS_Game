@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using Managers;
 using StarterAssets;
 using UnityEngine;
 
@@ -5,7 +8,11 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private FirstPersonController _fpsController;
-    [SerializeField] private Weapon _currentWeapon;
+    
+    [Header("Weapons")] 
+    [SerializeField] private List<Weapon> _weapons;
+    private Weapon _currentWeapon;
+    private int _currentWeaponIndex = 0;
     
     [Header("Player Configurations")]
     [SerializeField] private float _zoomInRotationsSpeed = 0.8f;
@@ -14,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _zoomOutRotationsSpeed = _fpsController.RotationSpeed;
+        SetActiveWeapon();
     }
 
     public void FireButtonClicked()
@@ -31,5 +39,80 @@ public class PlayerController : MonoBehaviour
             bool isZoomedIn = _currentWeapon.ToggleZoom();
             _fpsController.RotationSpeed = isZoomedIn ? _zoomInRotationsSpeed : _zoomOutRotationsSpeed;
         }
+    }
+
+    public void WeaponSelectionButtonClicked(int index)
+    {
+        int previousWeaponIndex = _currentWeaponIndex;
+
+        if (index >= 0 && index <= _weapons.Count - 1)
+        {
+            _currentWeaponIndex = index;
+        }
+
+        if (previousWeaponIndex != _currentWeaponIndex)
+        {
+            SetActiveWeapon();
+        }
+    }
+    
+    public void ScrollInputDetected(float scrollWheelInput)
+    {
+        int previousWeaponIndex = _currentWeaponIndex;
+        
+        ProcessScrollWheelInput(scrollWheelInput);
+
+        if (previousWeaponIndex != _currentWeaponIndex)
+        {
+            SetActiveWeapon();
+        }
+    }
+
+    private void ProcessScrollWheelInput(float scrollInput)
+    {
+        if (scrollInput < 0)
+        {
+            if (_currentWeaponIndex >= _weapons.Count - 1)
+            {
+                _currentWeaponIndex = 0;
+            }
+            else
+            {
+                _currentWeaponIndex++;
+            }
+        }
+
+        if (scrollInput > 0)
+        {
+            if (_currentWeaponIndex <= 0)
+            {
+                _currentWeaponIndex = _weapons.Count - 1;
+            }
+            else
+            {
+                _currentWeaponIndex--;
+            }
+        }
+    }
+
+    private void SetActiveWeapon()
+    {
+        int currentIndex = 0;
+        
+        foreach (Weapon weapon in _weapons)
+        {
+            if (_currentWeaponIndex == currentIndex)
+            {
+                weapon.gameObject.SetActive(true);
+            }
+            else
+            {
+                weapon.gameObject.SetActive(false);
+            }
+
+            currentIndex++;
+        }
+
+        _currentWeapon = _weapons[_currentWeaponIndex];
     }
 }

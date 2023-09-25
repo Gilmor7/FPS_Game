@@ -1912,6 +1912,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 789478695}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &817035630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1017420914529592636, guid: 91b4052d50c511940a402d1e0acf836c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3198346678549493982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d107fcde2f6ed846bca6ac959e35f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &820165541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5028,9 +5040,24 @@ PrefabInstance:
       objectReference: {fileID: 2123286108}
     - target: {fileID: 2501294926547737181, guid: 91b4052d50c511940a402d1e0acf836c,
         type: 3}
+      propertyPath: _weapons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2501294926547737181, guid: 91b4052d50c511940a402d1e0acf836c,
+        type: 3}
       propertyPath: _zoomInRotationsSpeed
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 2501294926547737181, guid: 91b4052d50c511940a402d1e0acf836c,
+        type: 3}
+      propertyPath: _weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 2123286108}
+    - target: {fileID: 2501294926547737181, guid: 91b4052d50c511940a402d1e0acf836c,
+        type: 3}
+      propertyPath: _weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 817035630}
     - target: {fileID: 4278756446790372581, guid: 91b4052d50c511940a402d1e0acf836c,
         type: 3}
       propertyPath: m_LocalPosition.x

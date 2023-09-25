@@ -17,13 +17,28 @@ public class WeaponZoom : MonoBehaviour
     {
         if (_isZoomedIn)
         {
-            _isZoomedIn = false;
-            _cinemachineCamera.m_Lens.FieldOfView = _zoomOutFOV;
+            ZoomOut();
         }
         else
         {
-            _isZoomedIn = true;
-            _cinemachineCamera.m_Lens.FieldOfView = _zoomInFOV;
+            ZoomIn();
         }
+    }
+
+    private void OnDisable()
+    {
+        ZoomOut();
+    }
+
+    private void ZoomIn()
+    {
+        _isZoomedIn = true;
+        _cinemachineCamera.m_Lens.FieldOfView = _zoomInFOV;
+    }
+    
+    private void ZoomOut()
+    {
+        _isZoomedIn = false;
+        _cinemachineCamera.m_Lens.FieldOfView = _zoomOutFOV;
     }
 }

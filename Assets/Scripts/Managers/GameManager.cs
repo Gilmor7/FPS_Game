@@ -9,6 +9,7 @@ namespace Managers
         public static GameManager Instance { get; private set; }
         public string EnemyTag => "Enemy"; 
         public string PlayerTag => "Player";
+        public bool IsPlaying { get; private set; } = true;
 
         private int _currentLevel = 0;
 
@@ -66,6 +67,7 @@ namespace Managers
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            IsPlaying = false;
         }
 
         private void StartGame()
@@ -73,6 +75,7 @@ namespace Managers
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            IsPlaying = true;
         }
 
         public void RestartLevel()

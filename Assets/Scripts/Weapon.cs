@@ -25,6 +25,11 @@ public class Weapon : MonoBehaviour
     {
         _weaponZoom = GetComponentInParent<WeaponZoom>();
     }
+    
+    private void OnEnable()
+    {
+        _canShoot = true;
+    }
 
     public async void Shoot()
     {
