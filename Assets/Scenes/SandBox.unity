@@ -215,11 +215,6 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -345,11 +340,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Height
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
@@ -982,11 +972,6 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -1344,11 +1329,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Speed
       value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
@@ -1953,11 +1933,6 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -2217,11 +2192,6 @@ PrefabInstance:
       propertyPath: m_Height
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -2361,11 +2331,6 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -2473,11 +2438,6 @@ PrefabInstance:
     - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_Speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
@@ -2599,11 +2559,6 @@ PrefabInstance:
     - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_Speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
@@ -3174,11 +3129,6 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -3739,11 +3689,6 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -3869,11 +3814,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Height
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
@@ -4648,11 +4588,6 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_RootOrder
@@ -4846,11 +4781,6 @@ PrefabInstance:
     - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_Speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
@@ -5120,11 +5050,6 @@ PrefabInstance:
     - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
         type: 3}
       propertyPath: m_Speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
-        type: 3}
-      propertyPath: m_StoppingDistance
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    private static readonly int DieAnimationTrigger = Animator.StringToHash("dieTrigger");
+    
     [SerializeField] private float _hitPoints = 100f;
+    public bool IsDead { get; private set; } = false; //optional somehow move this in to enemyController component with die functionality (Interface for both enemy and player?)
     
     public bool TakeDamage(float damage)
     {
@@ -15,6 +18,10 @@ public class EnemyHealth : MonoBehaviour
     
     public void Die()
     {
-        Destroy(this.gameObject);
+        if (IsDead == false)
+        {
+            IsDead = true;
+            GetComponent<Animator>().SetTrigger(DieAnimationTrigger);
+        }
     }
 }
