@@ -12,6 +12,11 @@ public class Ammo : MonoBehaviour
         public int AmmoAmount;
     }
 
+    public int GetCurrentAmount(AmmoType ammoType)
+    {
+        return GetAmmoSlotByType(ammoType).AmmoAmount;
+    }
+    
     public void ReduceCurrentAmount(AmmoType ammoType)
     {
         if (!IsSlotEmpty(ammoType))
@@ -22,6 +27,11 @@ public class Ammo : MonoBehaviour
         {
             throw new Exception("You are trying to reduce ammo from an empty slot");
         }
+    }
+    
+    public void IncreaseCurrentAmount(AmmoType ammoType, int ammoAmount)
+    {
+        GetAmmoSlotByType(ammoType).AmmoAmount += ammoAmount;
     }
     
     public bool IsSlotEmpty(AmmoType ammoType)

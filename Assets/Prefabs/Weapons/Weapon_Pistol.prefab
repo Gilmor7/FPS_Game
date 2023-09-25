@@ -344,10 +344,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _raySourceCamera: {fileID: 0}
-  _range: 25
+  _range: 30
   _damage: 15
   _timeBetweenShots: 0.2
   _ammoSlot: {fileID: 0}
+  _ammoType: 0
   _muzzleFlash: {fileID: 1557223824730187240}
   _hitEffect: {fileID: 2954720209692798342, guid: 1b837ec0a2c7b164d80d3e8404e09a38,
     type: 3}
