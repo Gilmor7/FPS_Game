@@ -3,23 +3,50 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    [SerializeField] private int _amount = 10;
-    public int Amount => _amount;
+    [SerializeField] private AmmoSlot[] _ammoSlots;
 
-    public void ReduceCurrentAmount()
+    [System.Serializable]
+    private class AmmoSlot
     {
-        if (!IsEmpty())
+        public AmmoType AmmoType;
+        public int AmmoAmount;
+    }
+
+    public void ReduceCurrentAmount(AmmoType ammoType)
+    {
+        if (!IsSlotEmpty(ammoType))
         {
-            _amount -= 1;
+            GetAmmoSlotByType(ammoType).AmmoAmount -= 1;
         }
         else
         {
             throw new Exception("You are trying to reduce ammo from an empty slot");
         }
     }
-
-    public bool IsEmpty()
+    
+    public bool IsSlotEmpty(AmmoType ammoType)
     {
-        return _amount == 0;
+        int amount = GetAmmoSlotByType(ammoType).AmmoAmount;
+        return amount == 0;
+    }
+
+    private AmmoSlot GetAmmoSlotByType(AmmoType ammoType)
+    {
+        AmmoSlot resultSlot = null;
+        
+        foreach (AmmoSlot slot in _ammoSlots)    
+        {
+            if (slot.AmmoType == ammoType)
+            {
+                resultSlot = slot;
+            }
+        }
+
+        if (resultSlot == null)
+        {
+            throw new ArgumentException($"There is no slot for AmmoType: {ammoType}");
+        }
+
+        return resultSlot;
     }
 }

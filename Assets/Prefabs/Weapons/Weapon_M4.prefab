@@ -548,6 +548,7 @@ MonoBehaviour:
   _damage: 25
   _timeBetweenShots: 0.5
   _ammoSlot: {fileID: 0}
+  _ammoType: 2
   _muzzleFlash: {fileID: 4206497877202554262}
   _hitEffect: {fileID: 2954720209692798342, guid: 1b837ec0a2c7b164d80d3e8404e09a38,
     type: 3}

@@ -1,4 +1,3 @@
-using System;
 using Managers;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
@@ -11,6 +10,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float _damage = 25f;
     [SerializeField] private float _timeBetweenShots = 0.5f;
     [SerializeField] private Ammo _ammoSlot;
+    [SerializeField] private AmmoType _ammoType;
     private WeaponZoom _weaponZoom;
     private bool _canShoot = true;
 
@@ -35,11 +35,11 @@ public class Weapon : MonoBehaviour
     {
         _canShoot = false;
         
-        if (_ammoSlot.IsEmpty() == false)
+        if (_ammoSlot.IsSlotEmpty(_ammoType) == false)
         {
             PlayMuzzleFlush();
             ShootRaycast();
-            _ammoSlot.ReduceCurrentAmount();
+            _ammoSlot.ReduceCurrentAmount(_ammoType);
         }
         else
         {
