@@ -500,6 +500,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2338305346893625907}
   - component: {fileID: 5744600754341765678}
+  - component: {fileID: 3629095853907923032}
   m_Layer: 0
   m_Name: Weapon_M4
   m_TagString: Untagged
@@ -542,10 +543,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d107fcde2f6ed846bca6ac959e35f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _range: 100
+  _raySourceCamera: {fileID: 0}
+  _range: 50
   _damage: 25
-  _muzzleFlash: {fileID: 0}
-  _hitEffect: {fileID: 0}
+  _timeBetweenShots: 0.5
+  _ammoSlot: {fileID: 0}
+  _ammoType: 2
+  _muzzleFlash: {fileID: 4206497877202554262}
+  _hitEffect: {fileID: 2954720209692798342, guid: 1b837ec0a2c7b164d80d3e8404e09a38,
+    type: 3}
+--- !u!114 &3629095853907923032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114385370449305737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95177575be2e32429fe54d848489e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinemachineCamera: {fileID: 0}
+  _zoomOutFOV: 40
+  _zoomInFOV: 20
 --- !u!1 &3137486719199350773
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +835,12 @@ PrefabInstance:
 --- !u!4 &4084617325962820824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5360677430766697929, guid: 66b467f6783286d4f867b6a5440a27d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 8271857327211413777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4206497877202554262 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5236544944481619079, guid: 66b467f6783286d4f867b6a5440a27d9,
     type: 3}
   m_PrefabInstance: {fileID: 8271857327211413777}
   m_PrefabAsset: {fileID: 0}
