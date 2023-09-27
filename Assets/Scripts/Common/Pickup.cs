@@ -1,3 +1,4 @@
+using DataTypes;
 using Managers;
 using UnityEngine;
 
@@ -10,8 +11,8 @@ namespace Common
             if (other.gameObject.CompareTag(GameManager.Instance.PlayerTag))
             {
                 HandlePickupAction();
+                AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetPlayerSoundEffect(ActionType.PlayerAction.ItemPickup));
                 Destroy(gameObject);
-                //Make pickup sound effect
             }
         }
 
