@@ -1,3 +1,4 @@
+using System;
 using Managers;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,15 +19,24 @@ public class Enemy : MonoBehaviour
     private Transform _targetTransform;
     private float _distanceFromTarget = Mathf.Infinity;
     private bool _isProvoked = false;
+    private EnemyHealth _health;
 
     void Start()
     {
         var player = GameObject.FindGameObjectWithTag(GameManager.Instance.PlayerTag);
+        
         _targetTransform = player.GetComponent<Transform>();
+        _health = GetComponent<EnemyHealth>();
     }
     
     void Update()
     {
+        if (_health.IsDead)
+        {
+            enabled = false;
+            return;
+        }
+        
         _distanceFromTarget = Vector3.Distance(_targetTransform.position, transform.position);
         if (_isProvoked)
         {
@@ -76,7 +86,12 @@ public class Enemy : MonoBehaviour
     {
         _isProvoked = true;
     }
-    
+
+    private void OnDisable()
+    {
+        _agent.enabled = false;
+    }
+
     void OnDrawGizmosSelected()
     {
         // Display the chase range radius when selected
