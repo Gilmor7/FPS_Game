@@ -1,18 +1,23 @@
 using Managers;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
+using DataTypes;
 
 public class Weapon : MonoBehaviour
 {
     [Header("Weapon Configurations")]
     [SerializeField] private Camera _raySourceCamera;
+    [SerializeField] private WeaponType _weaponType;
     [SerializeField] private float _range = 100f;
     [SerializeField] private float _damage = 25f;
     [SerializeField] private float _timeBetweenShots = 0.5f;
     [SerializeField] private Ammo _ammoSlot;
     [SerializeField] private AmmoType _ammoType;
-    private WeaponZoom _weaponZoom;
     private bool _canShoot = true;
+    
+    [Header("Weapon Components")] 
+    [SerializeField] private AudioSource _audioSource;
+    private WeaponZoom _weaponZoom;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem _muzzleFlash;

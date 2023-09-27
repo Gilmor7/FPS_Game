@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [Header("Components")]
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _audioSource;
 
     [Header("Agent Config")] 
     [SerializeField] private float _chaseRange = 15f;

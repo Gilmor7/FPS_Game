@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private FirstPersonController _fpsController;
     
-    [Header("Weapons")] 
     [SerializeField] private List<Weapon> _weapons;
     private Weapon _currentWeapon;
     private int _currentWeaponIndex = 0;
