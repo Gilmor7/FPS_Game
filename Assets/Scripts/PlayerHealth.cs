@@ -1,7 +1,8 @@
+using Common;
 using Managers;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IHealthSystem
 {
     [SerializeField] private float _hitPoints = 100f;
 

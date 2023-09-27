@@ -1,4 +1,4 @@
-using System;
+using Common;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,36 +26,19 @@ namespace Managers
             }
         }
 
-        public void EnemyGotHit(Weapon weapon, EnemyHealth enemyHealth)
+        public void CharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
         {
-            if (enemyHealth != null)
+            if (healthSystem != null)
             {
-                bool shouldDestroy = enemyHealth.TakeDamage(weapon.Damage);
+                bool shouldDestroy = healthSystem.TakeDamage(attacker.Damage);
 
                 if (shouldDestroy)
                 {
-                    enemyHealth.Die();
+                    healthSystem.Die();
                 }
             }
         }
-
-        //TODO: Find good way to prevent code duplication between PlayerGotHit and EnemyGotHit - It may be related to
-        // a generic health system class to both enemy and player that uses a controller reference to invoke die handler
-        // idea - create an interface with die method and both controllers will implement the die method
-        // Also both weapon and enemyAttack will implement IDamageable with Damage prop and methods if necessary
-        public void PlayerGotHit(EnemyAttack enemyAttack, PlayerHealth playerHealth)
-        {
-            if (playerHealth != null)
-            {
-                bool shouldDestroy = playerHealth.TakeDamage(enemyAttack.Damage);
-
-                if (shouldDestroy)
-                {
-                    playerHealth.Die();
-                }
-            }
-        }
-
+        
         public void HandlePlayerDeath()
         {
             PlayerHUDManager.Instance.SetGameOverScreen();

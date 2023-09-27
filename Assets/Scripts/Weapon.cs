@@ -1,9 +1,10 @@
+using Common;
 using Managers;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using DataTypes;
 
-public class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour, IDamageable
 {
     [Header("Weapon Configurations")]
     [SerializeField] private Camera _raySourceCamera;
@@ -96,7 +97,7 @@ public class Weapon : MonoBehaviour
 
             if (hitAnEnemy)
             {
-                GameManager.Instance.EnemyGotHit(this, hit.transform.gameObject.GetComponent<EnemyHealth>());
+                GameManager.Instance.CharacterGotHit(this, hit.transform.gameObject.GetComponent<EnemyHealth>());
             }
         }
         else
