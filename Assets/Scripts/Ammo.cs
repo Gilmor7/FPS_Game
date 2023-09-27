@@ -5,7 +5,7 @@ public class Ammo : MonoBehaviour
 {
     [SerializeField] private AmmoSlot[] _ammoSlots;
 
-    [System.Serializable]
+    [Serializable]
     private class AmmoSlot
     {
         public AmmoType AmmoType;
