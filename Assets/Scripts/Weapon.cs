@@ -101,7 +101,8 @@ public class Weapon : MonoBehaviour, IDamageable
 
             if (hitAnEnemy)
             {
-                GameManager.Instance.CharacterGotHit(this, hit.transform.gameObject.GetComponent<EnemyHealth>());
+                EventManager.Instance.PublishCharacterGotHit(this,
+                    hit.transform.gameObject.GetComponent<EnemyHealth>());
             }
         }
         else

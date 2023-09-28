@@ -19,6 +19,8 @@ namespace Managers
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+
+                EventManager.Instance.OnCharacterGotHit += HandleCharacterGotHit;
             }
             else
             {
@@ -26,7 +28,7 @@ namespace Managers
             }
         }
 
-        public void CharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
+        private void HandleCharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
         {
             if (healthSystem != null)
             {
