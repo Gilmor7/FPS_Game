@@ -1,7 +1,8 @@
+using Common;
 using Managers;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class EnemyAttack : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _damage = 20f;
     private PlayerHealth _target;
@@ -29,7 +30,7 @@ public class EnemyAttack : MonoBehaviour
     {
         if (_target != null)
         {
-            GameManager.Instance.PlayerGotHit(this, _target);
+            GameManager.Instance.CharacterGotHit(this, _target);
         }
     }
 }
