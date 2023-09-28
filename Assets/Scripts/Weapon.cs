@@ -43,13 +43,16 @@ public class Weapon : MonoBehaviour, IDamageable
         
         if (_ammoSlot.IsSlotEmpty(_ammoType) == false)
         {
+            AudioManager.Instance.PlaySoundEffect(_audioSource,
+                SoundsEffectsRepository.GetWeaponSoundEffect(_weaponType, ActionType.WeaponAction.Fire));
             PlayMuzzleFlush();
             ShootRaycast();
             _ammoSlot.ReduceCurrentAmount(_ammoType);
         }
         else
         {
-            //Play empty slot sound effect
+            AudioManager.Instance.PlaySoundEffect(_audioSource,
+                SoundsEffectsRepository.GetWeaponSoundEffect(_weaponType, ActionType.WeaponAction.FireNoAmmo));
         }
 
         await UniTask.Delay((int)(_timeBetweenShots * 1000));

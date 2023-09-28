@@ -4306,7 +4306,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ambianceSFXAudioSource: {fileID: 1682924679}
-  _soundObjects: []
+  _soundObjects:
+  - SoundType: 0
+    AudioClip: {fileID: 8300000, guid: 246a4c8eef0cc2747b7d8afa93463742, type: 3}
+  - SoundType: 1
+    AudioClip: {fileID: 8300000, guid: 4aeb9d32170380245b8fd9add7f5a92d, type: 3}
+  - SoundType: 40
+    AudioClip: {fileID: 8300000, guid: 25b7a9c42fe79ad48a4c145105ddeb85, type: 3}
 --- !u!4 &1682924681
 Transform:
   m_ObjectHideFlags: 0
