@@ -8,7 +8,7 @@ namespace Managers
     {
         // Define custom events
         public event Action OnAmmoAmountChanged;
-        // public event Action OnHealthChanged;
+        public event Action OnPlayerHealthDamageTaken;
         public event Action<IDamageable, IHealthSystem> OnCharacterGotHit;
 
         public static EventManager Instance { get; private set; }
@@ -31,15 +31,15 @@ namespace Managers
         {
             OnAmmoAmountChanged?.Invoke();
         }
+        
         public void PublishCharacterGotHit(IDamageable attacker, IHealthSystem characterHealthSystem)
         {
             OnCharacterGotHit?.Invoke(attacker, characterHealthSystem);
         }
 
-        // public void PublishHealthChanged()
-        // {
-        //     OnHealthChanged?.Invoke();
-        // }
-        //
+        public void PublishPlayerHealthDamageTaken()
+        {
+            OnPlayerHealthDamageTaken?.Invoke();
+        }
     }
 }

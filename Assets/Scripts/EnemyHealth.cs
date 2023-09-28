@@ -1,6 +1,7 @@
 using Common;
 using UnityEngine;
 
+//TODO: spare code duplication in HealthSystems by using Template Method or strategy patterns.
 public class EnemyHealth : MonoBehaviour, IHealthSystem
 {
     private static readonly int DieAnimationTrigger = Animator.StringToHash("dieTrigger");
@@ -10,8 +11,13 @@ public class EnemyHealth : MonoBehaviour, IHealthSystem
     
     public bool TakeDamage(float damage)
     {
-        BroadcastMessage("OnDamageTaken");
         _hitPoints -= damage; 
+        
+        if (!IsDead)
+        {
+            BroadcastMessage("OnDamageTaken");
+        }
+        
         return _hitPoints <= 0;
     }
     

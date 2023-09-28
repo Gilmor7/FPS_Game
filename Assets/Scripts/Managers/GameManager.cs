@@ -32,16 +32,16 @@ namespace Managers
         {
             if (healthSystem != null)
             {
-                bool shouldDestroy = healthSystem.TakeDamage(attacker.Damage);
+                bool shouldDie = healthSystem.TakeDamage(attacker.Damage);
 
-                if (shouldDestroy)
+                if (shouldDie)
                 {
                     healthSystem.Die();
                 }
             }
         }
 
-        public void UpdateAmmoAmount(int ammoAmount)
+        public void UpdateAmmoAmountDisplay(int ammoAmount)
         {
             PlayerHUDManager.Instance.SetAmmoAmountDisplay(ammoAmount);
         }
