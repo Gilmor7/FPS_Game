@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 2557997804473521456}
   _animator: {fileID: 4819745799990244931}
-  _audio: {fileID: 4198664684024678993}
+  _audioSource: {fileID: 4198664684024678993}
   _chaseRange: 15
   _turnSpeed: 6
 --- !u!114 &7408518663207394636

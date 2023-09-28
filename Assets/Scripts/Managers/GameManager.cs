@@ -38,6 +38,11 @@ namespace Managers
                 }
             }
         }
+
+        public void UpdateAmmoAmount(int ammoAmount)
+        {
+            PlayerHUDManager.Instance.SetAmmoAmountDisplay(ammoAmount);
+        }
         
         public void HandlePlayerDeath()
         {

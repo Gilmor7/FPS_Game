@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _zoomOutRotationsSpeed = _fpsController.RotationSpeed;
+        EventManager.Instance.OnAmmoAmountChanged += HandleAmmoAmountChanged;
         SetActiveWeapon();
     }
 
@@ -113,5 +114,11 @@ public class PlayerController : MonoBehaviour
         }
 
         _currentWeapon = _weapons[_currentWeaponIndex];
+        EventManager.Instance.PublishAmmoAmountChanged();
+    }
+
+    private void HandleAmmoAmountChanged()
+    {
+        GameManager.Instance.UpdateAmmoAmount(_currentWeapon.AmmoAmount);
     }
 }

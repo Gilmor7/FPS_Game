@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour, IDamageable
     
     public float Damage => _damage;
     public bool CanShoot => _canShoot;
+    public int AmmoAmount => _ammoSlot.GetCurrentAmount(_ammoType);
 
     private void Start()
     {

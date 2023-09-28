@@ -1,4 +1,5 @@
 using System;
+using Managers;
 using UnityEngine;
 
 public class Ammo : MonoBehaviour
@@ -22,6 +23,7 @@ public class Ammo : MonoBehaviour
         if (!IsSlotEmpty(ammoType))
         {
             GetAmmoSlotByType(ammoType).AmmoAmount -= 1;
+            EventManager.Instance.PublishAmmoAmountChanged();
         }
         else
         {
@@ -32,6 +34,7 @@ public class Ammo : MonoBehaviour
     public void IncreaseCurrentAmount(AmmoType ammoType, int ammoAmount)
     {
         GetAmmoSlotByType(ammoType).AmmoAmount += ammoAmount;
+        EventManager.Instance.PublishAmmoAmountChanged();
     }
     
     public bool IsSlotEmpty(AmmoType ammoType)
