@@ -1,3 +1,4 @@
+using System;
 using Common;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -87,6 +88,11 @@ namespace Managers
         {
             Application.Quit();
             //In the future goes back to Main Menu
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.Instance.OnCharacterGotHit -= HandleCharacterGotHit;
         }
     }
 }

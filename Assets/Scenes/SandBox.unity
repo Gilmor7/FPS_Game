@@ -5749,6 +5749,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2501294926547737181, guid: 91b4052d50c511940a402d1e0acf836c,
         type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 8997996947477819655}
+    - target: {fileID: 2501294926547737181, guid: 91b4052d50c511940a402d1e0acf836c,
+        type: 3}
       propertyPath: _currentWeapon
       value: 
       objectReference: {fileID: 2123286108}
@@ -5982,3 +5987,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6b1a267147f334093997ed1eff35d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &8997996947477819655 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5136047409236394920, guid: 91b4052d50c511940a402d1e0acf836c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3198346678549493982}
+  m_PrefabAsset: {fileID: 0}

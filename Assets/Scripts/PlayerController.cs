@@ -132,4 +132,10 @@ public class PlayerController : MonoBehaviour
             _audioSource, SoundsEffectsRepository.GetPlayerSoundEffect(ActionType.PlayerAction.GetHurt));
         GameManager.Instance.HandlePlayerTakeDamage();
     }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.OnAmmoAmountChanged -= HandleAmmoAmountChanged;
+        EventManager.Instance.OnPlayerHealthDamageTaken -= HandleHealthDamageTaken;
+    }
 }
