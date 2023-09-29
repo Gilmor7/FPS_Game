@@ -130,5 +130,6 @@ public class PlayerController : MonoBehaviour
     {
         AudioManager.Instance.PlaySoundEffect(
             _audioSource, SoundsEffectsRepository.GetPlayerSoundEffect(ActionType.PlayerAction.GetHurt));
+        GameManager.Instance.HandlePlayerTakeDamage();
     }
 }
