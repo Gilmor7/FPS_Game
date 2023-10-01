@@ -303,7 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e70c7ef0753f4c4096c224cc2ae8ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 5136047409236394920}
   _hitPoints: 100
 --- !u!114 &2501294926547737181
 MonoBehaviour:
@@ -318,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fpsController: {fileID: 6626573493426754205}
+  _audioSource: {fileID: 5136047409236394920}
   _weapons:
   - {fileID: 4131178420876584725}
   - {fileID: 8098663352121430751}

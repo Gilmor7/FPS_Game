@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour, IDamageable
     
     public float Damage => _damage;
     public bool CanShoot => _canShoot;
+    public int AmmoAmount => _ammoSlot.GetCurrentAmount(_ammoType);
 
     private void Start()
     {
@@ -100,7 +101,8 @@ public class Weapon : MonoBehaviour, IDamageable
 
             if (hitAnEnemy)
             {
-                GameManager.Instance.CharacterGotHit(this, hit.transform.gameObject.GetComponent<EnemyHealth>());
+                EventManager.Instance.PublishCharacterGotHit(this,
+                    hit.transform.gameObject.GetComponent<EnemyHealth>());
             }
         }
         else

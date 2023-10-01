@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Common;
+using DataTypes;
 using Managers;
 using StarterAssets;
 using UnityEngine;
@@ -8,7 +10,8 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private FirstPersonController _fpsController;
-    
+    [SerializeField] private AudioSource _audioSource;
+
     [SerializeField] private List<Weapon> _weapons;
     private Weapon _currentWeapon;
     private int _currentWeaponIndex = 0;
@@ -20,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _zoomOutRotationsSpeed = _fpsController.RotationSpeed;
+        EventManager.Instance.OnAmmoAmountChanged += HandleAmmoAmountChanged;
+        EventManager.Instance.OnPlayerHealthDamageTaken += HandleHealthDamageTaken;
         SetActiveWeapon();
     }
 
@@ -113,5 +118,24 @@ public class PlayerController : MonoBehaviour
         }
 
         _currentWeapon = _weapons[_currentWeaponIndex];
+        EventManager.Instance.PublishAmmoAmountChanged();
+    }
+
+    private void HandleAmmoAmountChanged()
+    {
+        GameManager.Instance.UpdateAmmoAmountDisplay(_currentWeapon.AmmoAmount);
+    }
+
+    private void HandleHealthDamageTaken()
+    {
+        AudioManager.Instance.PlaySoundEffect(
+            _audioSource, SoundsEffectsRepository.GetPlayerSoundEffect(ActionType.PlayerAction.GetHurt));
+        GameManager.Instance.HandlePlayerTakeDamage();
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.Instance.OnAmmoAmountChanged -= HandleAmmoAmountChanged;
+        EventManager.Instance.OnPlayerHealthDamageTaken -= HandleHealthDamageTaken;
     }
 }

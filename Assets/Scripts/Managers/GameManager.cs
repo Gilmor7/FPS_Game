@@ -1,4 +1,6 @@
+using System;
 using Common;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +21,8 @@ namespace Managers
             {
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
+
+                EventManager.Instance.OnCharacterGotHit += HandleCharacterGotHit;
             }
             else
             {
@@ -26,17 +30,29 @@ namespace Managers
             }
         }
 
-        public void CharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
+        private void HandleCharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
         {
             if (healthSystem != null)
             {
-                bool shouldDestroy = healthSystem.TakeDamage(attacker.Damage);
+                bool shouldDie = healthSystem.TakeDamage(attacker.Damage);
 
-                if (shouldDestroy)
+                if (shouldDie)
                 {
                     healthSystem.Die();
                 }
             }
+        }
+
+        public void UpdateAmmoAmountDisplay(int ammoAmount)
+        {
+            PlayerHUDManager.Instance.SetAmmoAmountDisplay(ammoAmount);
+        }
+
+        public async void HandlePlayerTakeDamage()
+        {
+            PlayerHUDManager.Instance.DisplayPlayerDamagedScreen();
+            await UniTask.Delay(300);
+            PlayerHUDManager.Instance.HidePlayerDamagedScreen();
         }
         
         public void HandlePlayerDeath()
@@ -72,6 +88,11 @@ namespace Managers
         {
             Application.Quit();
             //In the future goes back to Main Menu
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.Instance.OnCharacterGotHit -= HandleCharacterGotHit;
         }
     }
 }

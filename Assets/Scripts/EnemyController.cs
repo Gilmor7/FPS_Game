@@ -1,9 +1,8 @@
-using System;
 using Managers;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     private static readonly int AttackAnimationParam = Animator.StringToHash("attack");
     private static readonly int MoveAnimationTrigger = Animator.StringToHash("moveTrigger");

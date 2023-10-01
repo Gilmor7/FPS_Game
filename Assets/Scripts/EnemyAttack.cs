@@ -30,7 +30,7 @@ public class EnemyAttack : MonoBehaviour, IDamageable
     {
         if (_target != null)
         {
-            GameManager.Instance.CharacterGotHit(this, _target);
+            EventManager.Instance.PublishCharacterGotHit(this, _target);
         }
     }
 }
