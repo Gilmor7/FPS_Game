@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 454100}
   - component: {fileID: 3360998}
   - component: {fileID: 2380146}
+  - component: {fileID: 1650045346657486233}
   m_Layer: 0
   m_Name: reszta_low
   m_TagString: Untagged
@@ -332,6 +333,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1650045346657486233
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.795899, y: 3.1759124, z: 3.27}
+  m_Center: {x: 0, y: 0, z: -0.45}
 --- !u!1 &158498
 GameObject:
   m_ObjectHideFlags: 0
