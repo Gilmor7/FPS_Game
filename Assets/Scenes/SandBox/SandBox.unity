@@ -246,6 +246,12 @@ NavMeshAgent:
     type: 3}
   m_PrefabInstance: {fileID: 119132025}
   m_PrefabAsset: {fileID: 0}
+--- !u!223 &129784601 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 474591649021851297, guid: 5c31ece24be4d0547a2176255a9ad908,
+    type: 3}
+  m_PrefabInstance: {fileID: 474591650579354635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &151694593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,6 +1094,12 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
     type: 3}
   m_PrefabInstance: {fileID: 712040219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &755835090 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 474591650343095094, guid: 5c31ece24be4d0547a2176255a9ad908,
+    type: 3}
+  m_PrefabInstance: {fileID: 474591650579354635}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &789478695
 PrefabInstance:
@@ -2066,6 +2078,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ea481c4034c904a91a5f732382d7ae, type: 3}
+--- !u!223 &968041623 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 474591649690801265, guid: 5c31ece24be4d0547a2176255a9ad908,
+    type: 3}
+  m_PrefabInstance: {fileID: 474591650579354635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &990603983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3744,6 +3762,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1713070952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 474591650225307934, guid: 5c31ece24be4d0547a2176255a9ad908,
+    type: 3}
+  m_PrefabInstance: {fileID: 474591650579354635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1713070954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713070952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7ebca813b82734990013c20ad61e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameOverCanvas: {fileID: 968041623}
+  _weaponReticleCanvas: {fileID: 129784601}
+  _ammoDisplayCanvas: {fileID: 755835090}
+  _playerDamagedDisplayCanvas: {fileID: 1887868477}
 --- !u!4 &1767637366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2557997804473521460, guid: 37ea481c4034c904a91a5f732382d7ae,
@@ -3755,6 +3795,12 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 2557997804473521456, guid: 37ea481c4034c904a91a5f732382d7ae,
     type: 3}
   m_PrefabInstance: {fileID: 927296509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1887868477 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 474591648565888492, guid: 5c31ece24be4d0547a2176255a9ad908,
+    type: 3}
+  m_PrefabInstance: {fileID: 474591650579354635}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1909406468
 GameObject:
