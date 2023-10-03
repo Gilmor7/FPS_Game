@@ -92,6 +92,7 @@ public class EnemyController : MonoBehaviour
     private void OnDisable()
     {
         _agent.enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 
     void OnDrawGizmosSelected()
