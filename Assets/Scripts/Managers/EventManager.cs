@@ -10,6 +10,7 @@ namespace Managers
         public event Action OnAmmoAmountChanged;
         public event Action OnPlayerHealthDamageTaken;
         public event Action<IDamageable, IHealthSystem> OnCharacterGotHit;
+        public event Action OnLevelCompleted;
 
         public static EventManager Instance { get; private set; }
 
@@ -40,6 +41,11 @@ namespace Managers
         public void PublishPlayerHealthDamageTaken()
         {
             OnPlayerHealthDamageTaken?.Invoke();
+        }
+        
+        public void PublishLevelCompleted()
+        {
+            OnLevelCompleted?.Invoke();
         }
     }
 }

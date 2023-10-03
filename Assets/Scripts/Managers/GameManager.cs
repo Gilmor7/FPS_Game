@@ -1,4 +1,3 @@
-using System;
 using Common;
 using Cysharp.Threading.Tasks;
 using DataTypes;
@@ -9,12 +8,14 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
+        private const int NumOfLevels = 3;
+        
         public static GameManager Instance { get; private set; }
         public string EnemyTag => "Enemy"; 
         public string PlayerTag => "Player";
         public bool IsPlaying { get; private set; } = true;
 
-        private int _currentLevel = 0;
+        private int _currentLevel = 1;
 
         protected void Awake()
         {
@@ -24,6 +25,7 @@ namespace Managers
                 DontDestroyOnLoad(gameObject);
 
                 EventManager.Instance.OnCharacterGotHit += HandleCharacterGotHit;
+                EventManager.Instance.OnLevelCompleted += HandleLevelCompletion;
             }
             else
             {
@@ -34,6 +36,12 @@ namespace Managers
         private void Start() //May be deleted after adding main menu
         { 
             StartGame();
+        }
+        
+        private async void PlayStartingGameSfx()
+        {
+            await UniTask.Delay(1000);
+            AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.CreepyLaugh));
         }
 
         private void HandleCharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
@@ -67,6 +75,21 @@ namespace Managers
             StopGame();
         }
 
+        private void HandleLevelCompletion()
+        {
+            StopGame();
+
+            if (_currentLevel < NumOfLevels)
+            {
+                _currentLevel++;
+                StartNewLevel(_currentLevel);
+            }
+            else
+            {
+                //TODO: Go to main Menu
+            }
+        }
+
         private void StopGame()
         {
             Time.timeScale = 0;
@@ -86,7 +109,7 @@ namespace Managers
 
         private void StartNewLevel(int levelNumber)
         {
-            SceneManager.LoadScene(levelNumber);
+            SceneManager.LoadScene(levelNumber - 1);
             PlayerHUDManager.Instance.SetNewLevelScreen();
             StartGame();
         }
@@ -102,15 +125,10 @@ namespace Managers
             //In the future goes back to Main Menu
         }
 
-        private async void PlayStartingGameSfx()
-        {
-            await UniTask.Delay(1000);
-            AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.CreepyLaugh));
-        }
-
         private void OnDestroy()
         {
             EventManager.Instance.OnCharacterGotHit -= HandleCharacterGotHit;
+            EventManager.Instance.OnLevelCompleted -= HandleLevelCompletion;
         }
     }
 }
