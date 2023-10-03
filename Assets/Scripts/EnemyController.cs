@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     private static readonly int AttackAnimationParam = Animator.StringToHash("attack");
     private static readonly int MoveAnimationTrigger = Animator.StringToHash("moveTrigger");
+    private static readonly int StunnedAnimationTrigger = Animator.StringToHash("stunnedTrigger");
 
     [Header("Components")]
     [SerializeField] private NavMeshAgent _agent;
@@ -85,11 +86,13 @@ public class EnemyController : MonoBehaviour
     public void OnDamageTaken()
     {
         _isProvoked = true;
+        _animator.SetTrigger(StunnedAnimationTrigger);
     }
 
     private void OnDisable()
     {
         _agent.enabled = false;
+        GetComponent<Collider>().enabled = false;
     }
 
     void OnDrawGizmosSelected()

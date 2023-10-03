@@ -547,8 +547,8 @@ MonoBehaviour:
   _raySourceCamera: {fileID: 0}
   _weaponType: 0
   _range: 50
-  _damage: 25
-  _timeBetweenShots: 0.5
+  _damage: 34
+  _timeBetweenShots: 0.2
   _ammoSlot: {fileID: 0}
   _ammoType: 2
   _audioSource: {fileID: 4573970535126923589}

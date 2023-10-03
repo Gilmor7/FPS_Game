@@ -1,6 +1,6 @@
-using System;
 using Common;
 using Cysharp.Threading.Tasks;
+using DataTypes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +8,14 @@ namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
+        private const int NumOfLevels = 3;
+        
         public static GameManager Instance { get; private set; }
         public string EnemyTag => "Enemy"; 
         public string PlayerTag => "Player";
         public bool IsPlaying { get; private set; } = true;
 
-        private int _currentLevel = 0;
+        private int _currentLevel = 1;
 
         protected void Awake()
         {
@@ -23,11 +25,23 @@ namespace Managers
                 DontDestroyOnLoad(gameObject);
 
                 EventManager.Instance.OnCharacterGotHit += HandleCharacterGotHit;
+                EventManager.Instance.OnLevelCompleted += HandleLevelCompletion;
             }
             else
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start() //May be deleted after adding main menu
+        { 
+            StartGame();
+        }
+        
+        private async void PlayStartingGameSfx()
+        {
+            await UniTask.Delay(1000);
+            AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.CreepyLaugh));
         }
 
         private void HandleCharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
@@ -61,6 +75,21 @@ namespace Managers
             StopGame();
         }
 
+        private void HandleLevelCompletion()
+        {
+            StopGame();
+
+            if (_currentLevel < NumOfLevels)
+            {
+                _currentLevel++;
+                StartNewLevel(_currentLevel);
+            }
+            else
+            {
+                //TODO: Go to main Menu
+            }
+        }
+
         private void StopGame()
         {
             Time.timeScale = 0;
@@ -75,13 +104,19 @@ namespace Managers
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             IsPlaying = true;
+            PlayStartingGameSfx();
+        }
+
+        private void StartNewLevel(int levelNumber)
+        {
+            SceneManager.LoadScene(levelNumber - 1);
+            PlayerHUDManager.Instance.SetNewLevelScreen();
+            StartGame();
         }
 
         public void RestartLevel()
         {
-            SceneManager.LoadSceneAsync(_currentLevel);
-            PlayerHUDManager.Instance.SetNewLevelScreen();
-            StartGame();
+            StartNewLevel(_currentLevel);
         }
 
         public void QuitLevel()
@@ -93,6 +128,7 @@ namespace Managers
         private void OnDestroy()
         {
             EventManager.Instance.OnCharacterGotHit -= HandleCharacterGotHit;
+            EventManager.Instance.OnLevelCompleted -= HandleLevelCompletion;
         }
     }
 }

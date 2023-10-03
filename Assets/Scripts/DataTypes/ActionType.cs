@@ -13,6 +13,7 @@ namespace DataTypes
             Chase,
             Attack,
             Die,
+            CreepyLaugh,
         }
         public enum WeaponAction
         {
