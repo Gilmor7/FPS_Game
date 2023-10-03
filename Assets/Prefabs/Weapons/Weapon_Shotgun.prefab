@@ -222,7 +222,7 @@ MonoBehaviour:
   _weaponType: 1
   _range: 15
   _damage: 50
-  _timeBetweenShots: 1
+  _timeBetweenShots: 0.6
   _ammoSlot: {fileID: 0}
   _ammoType: 1
   _audioSource: {fileID: 8976848070446704803}
