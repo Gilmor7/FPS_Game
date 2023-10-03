@@ -18,7 +18,8 @@ namespace Common
                 { ActionType.EnemyAction.GetHurt, SoundType.EnemyGetHurt },
                 { ActionType.EnemyAction.Attack, SoundType.EnemyAttack },
                 { ActionType.EnemyAction.Chase, SoundType.EnemyChasing },
-                { ActionType.EnemyAction.Die, SoundType.EnemyDie }
+                { ActionType.EnemyAction.Die, SoundType.EnemyDie },
+                { ActionType.EnemyAction.CreepyLaugh, SoundType.EnemyCreepyLaugh }
             };
         
         private static readonly Dictionary<(WeaponType, ActionType.WeaponAction), SoundType> _weaponSoundTypesMap =

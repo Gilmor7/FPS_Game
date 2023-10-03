@@ -1,6 +1,7 @@
 using System;
 using Common;
 using Cysharp.Threading.Tasks;
+using DataTypes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,6 +29,11 @@ namespace Managers
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start() //May be deleted after adding main menu
+        { 
+            StartGame();
         }
 
         private void HandleCharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
@@ -75,19 +81,31 @@ namespace Managers
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             IsPlaying = true;
+            PlayStartingGameSfx();
+        }
+
+        private void StartNewLevel(int levelNumber)
+        {
+            SceneManager.LoadScene(levelNumber);
+            PlayerHUDManager.Instance.SetNewLevelScreen();
+            StartGame();
         }
 
         public void RestartLevel()
         {
-            SceneManager.LoadSceneAsync(_currentLevel);
-            PlayerHUDManager.Instance.SetNewLevelScreen();
-            StartGame();
+            StartNewLevel(_currentLevel);
         }
 
         public void QuitLevel()
         {
             Application.Quit();
             //In the future goes back to Main Menu
+        }
+
+        private async void PlayStartingGameSfx()
+        {
+            await UniTask.Delay(1000);
+            AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.CreepyLaugh));
         }
 
         private void OnDestroy()

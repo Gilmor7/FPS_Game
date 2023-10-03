@@ -10,6 +10,7 @@ namespace DataTypes
         EnemyAttack = 11,
         EnemyChasing = 12,
         EnemyDie = 13,
+        EnemyCreepyLaugh = 14,
         //Weapons:
         //M-4
         M4Fire = 20,
