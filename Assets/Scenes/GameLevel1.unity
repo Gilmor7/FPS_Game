@@ -166,7 +166,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &367688107
 PrefabInstance:
@@ -294,7 +294,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &445987240
 GameObject:
@@ -329,7 +329,7 @@ Transform:
   - {fileID: 731002725}
   - {fileID: 2059375017}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &489558657
 PrefabInstance:
@@ -490,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 5817949054772496416, guid: 91b4052d50c511940a402d1e0acf836c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5817949054772496416, guid: 91b4052d50c511940a402d1e0acf836c,
         type: 3}
@@ -724,7 +724,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1377484059
 PrefabInstance:
@@ -937,10 +937,26 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 246a4c8eef0cc2747b7d8afa93463742, type: 3}
   - SoundType: 1
     AudioClip: {fileID: 8300000, guid: 4aeb9d32170380245b8fd9add7f5a92d, type: 3}
-  - SoundType: 40
-    AudioClip: {fileID: 8300000, guid: 25b7a9c42fe79ad48a4c145105ddeb85, type: 3}
   - SoundType: 14
     AudioClip: {fileID: 8300000, guid: b6f8800041344834e8dd78730e16b330, type: 3}
+  - SoundType: 30
+    AudioClip: {fileID: 8300000, guid: 59de913e6058d9e439ad924e3a8d21e4, type: 3}
+  - SoundType: 31
+    AudioClip: {fileID: 8300000, guid: 647cb5717bbf0cd4fa64af8b88bfa8df, type: 3}
+  - SoundType: 32
+    AudioClip: {fileID: 8300000, guid: d187e03d9fe9442429251cff8792bb03, type: 3}
+  - SoundType: 40
+    AudioClip: {fileID: 8300000, guid: 25b7a9c42fe79ad48a4c145105ddeb85, type: 3}
+  - SoundType: 41
+    AudioClip: {fileID: 8300000, guid: a916c86dd5599154ca017a46f5cc197f, type: 3}
+  - SoundType: 42
+    AudioClip: {fileID: 8300000, guid: d187e03d9fe9442429251cff8792bb03, type: 3}
+  - SoundType: 20
+    AudioClip: {fileID: 8300000, guid: c386ffcf3d817904bb9064f2a790a2a9, type: 3}
+  - SoundType: 21
+    AudioClip: {fileID: 8300000, guid: 78ef58a2848fac3449762e104f1fefcb, type: 3}
+  - SoundType: 22
+    AudioClip: {fileID: 8300000, guid: d187e03d9fe9442429251cff8792bb03, type: 3}
 --- !u!4 &1419654420
 Transform:
   m_ObjectHideFlags: 0
@@ -954,7 +970,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1423912628
 GameObject:
@@ -1803,7 +1819,7 @@ Transform:
   - {fileID: 474591649374405529}
   - {fileID: 474591650080230727}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474591649525057974
 GameObject:
@@ -2712,7 +2728,7 @@ PrefabInstance:
     - target: {fileID: 4859330748079223911, guid: 3fc7b07865bfb1f4b9514e23f0305396,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4859330748079223911, guid: 3fc7b07865bfb1f4b9514e23f0305396,
         type: 3}

@@ -32,6 +32,7 @@ namespace Common
                 { (WeaponType.Shotgun, ActionType.WeaponAction.Reload), SoundType.ShotgunReload },
                 { (WeaponType.Shotgun, ActionType.WeaponAction.FireNoAmmo), SoundType.ShotgunNoAmmo },
                 { (WeaponType.Pistol, ActionType.WeaponAction.Fire), SoundType.PistolFire },
+                { (WeaponType.Pistol, ActionType.WeaponAction.Reload), SoundType.PistolReload },
                 { (WeaponType.Pistol, ActionType.WeaponAction.FireNoAmmo), SoundType.PistolNoAmmo }
             };
         

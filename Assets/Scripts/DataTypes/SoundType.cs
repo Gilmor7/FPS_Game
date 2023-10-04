@@ -22,7 +22,8 @@ namespace DataTypes
         ShotgunNoAmmo = 32,
         //Pistol
         PistolFire = 40,
-        PistolNoAmmo = 41,
+        PistolReload = 41,
+        PistolNoAmmo = 42,
         
         None
     }
