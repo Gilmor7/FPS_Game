@@ -10,6 +10,8 @@ namespace DataTypes
         public enum EnemyAction
         {
             GetHurt,
+            ProvokedByShoot,
+            ProvokedByRange,
             Chase,
             Attack,
             Die,

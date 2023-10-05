@@ -11,6 +11,8 @@ namespace DataTypes
         EnemyChasing = 12,
         EnemyDie = 13,
         EnemyCreepyLaugh = 14,
+        EnemyProvokedByShoot = 15,
+        EnemyProvokedByRange = 16,
         //Weapons:
         //M-4
         M4Fire = 20,

@@ -18,6 +18,8 @@ namespace Common
                 { ActionType.EnemyAction.GetHurt, SoundType.EnemyGetHurt },
                 { ActionType.EnemyAction.Attack, SoundType.EnemyAttack },
                 { ActionType.EnemyAction.Chase, SoundType.EnemyChasing },
+                { ActionType.EnemyAction.ProvokedByShoot, SoundType.EnemyProvokedByShoot },
+                { ActionType.EnemyAction.ProvokedByRange, SoundType.EnemyProvokedByRange },
                 { ActionType.EnemyAction.Die, SoundType.EnemyDie },
                 { ActionType.EnemyAction.CreepyLaugh, SoundType.EnemyCreepyLaugh }
             };

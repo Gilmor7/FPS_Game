@@ -934,11 +934,21 @@ MonoBehaviour:
   _ambianceSFXAudioSource: {fileID: 1419654418}
   _soundObjects:
   - SoundType: 0
-    AudioClip: {fileID: 8300000, guid: 246a4c8eef0cc2747b7d8afa93463742, type: 3}
+    AudioClip: {fileID: 8300000, guid: e7aaed524b41bea4fafbf3e7ddc1fe7c, type: 3}
   - SoundType: 1
     AudioClip: {fileID: 8300000, guid: 4aeb9d32170380245b8fd9add7f5a92d, type: 3}
   - SoundType: 14
     AudioClip: {fileID: 8300000, guid: b6f8800041344834e8dd78730e16b330, type: 3}
+  - SoundType: 15
+    AudioClip: {fileID: 8300000, guid: 3cc40c67de27bd9479166cbfe374b691, type: 3}
+  - SoundType: 16
+    AudioClip: {fileID: 8300000, guid: c555d1e0716019a4dac339f0af63e4bf, type: 3}
+  - SoundType: 11
+    AudioClip: {fileID: 8300000, guid: aa688952c38d4be4ea61a47efd1571ae, type: 3}
+  - SoundType: 10
+    AudioClip: {fileID: 8300000, guid: 206fb490f61d90e4d86dcf4b7a9cd9ec, type: 3}
+  - SoundType: 13
+    AudioClip: {fileID: 8300000, guid: 1e488ba9ff9189944b3a101b175e1b64, type: 3}
   - SoundType: 30
     AudioClip: {fileID: 8300000, guid: 59de913e6058d9e439ad924e3a8d21e4, type: 3}
   - SoundType: 31

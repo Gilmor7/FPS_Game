@@ -1,3 +1,5 @@
+using Common;
+using DataTypes;
 using Managers;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,6 +9,7 @@ public class EnemyController : MonoBehaviour
     private static readonly int AttackAnimationParam = Animator.StringToHash("attack");
     private static readonly int MoveAnimationTrigger = Animator.StringToHash("moveTrigger");
     private static readonly int StunnedAnimationTrigger = Animator.StringToHash("stunnedTrigger");
+    private static readonly int DieAnimationTrigger = Animator.StringToHash("dieTrigger");
 
     [Header("Components")]
     [SerializeField] private NavMeshAgent _agent;
@@ -45,8 +48,23 @@ public class EnemyController : MonoBehaviour
         }
         else if (_distanceFromTarget <= _chaseRange)
         {
-            _isProvoked = true;
+            Provoke(isProvokeByShoot: false);
         }
+    }
+
+    private void Provoke(bool isProvokeByShoot)
+    {
+        bool isAlreadyProvoked = _isProvoked;
+
+        if (!isAlreadyProvoked)
+        {
+            ActionType.EnemyAction actionType = isProvokeByShoot
+                ? ActionType.EnemyAction.ProvokedByShoot
+                : ActionType.EnemyAction.ProvokedByRange;
+            AudioManager.Instance.PlaySoundEffect(_audioSource, SoundsEffectsRepository.GetEnemySoundEffect(actionType));  
+        }
+        
+        _isProvoked = true;
     }
 
     private void EngageTarget()
@@ -85,8 +103,21 @@ public class EnemyController : MonoBehaviour
 
     public void OnDamageTaken()
     {
-        _isProvoked = true;
+        Provoke(isProvokeByShoot: true);
         _animator.SetTrigger(StunnedAnimationTrigger);
+        AudioManager.Instance.PlaySoundEffect(_audioSource, 
+            SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.GetHurt));
+    }
+
+    public void AnimateEnemyDie()
+    {
+        _animator.SetTrigger(DieAnimationTrigger);
+    }
+
+    public void CorpseFallEvent()
+    {
+        AudioManager.Instance.PlaySoundEffect(_audioSource, 
+            SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.Die));
     }
 
     private void OnDisable()
