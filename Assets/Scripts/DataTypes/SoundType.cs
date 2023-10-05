@@ -11,6 +11,8 @@ namespace DataTypes
         EnemyChasing = 12,
         EnemyDie = 13,
         EnemyCreepyLaugh = 14,
+        EnemyProvokedByShoot = 15,
+        EnemyProvokedByRange = 16,
         //Weapons:
         //M-4
         M4Fire = 20,
@@ -22,7 +24,8 @@ namespace DataTypes
         ShotgunNoAmmo = 32,
         //Pistol
         PistolFire = 40,
-        PistolNoAmmo = 41,
+        PistolReload = 41,
+        PistolNoAmmo = 42,
         
         None
     }

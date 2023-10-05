@@ -35,6 +35,11 @@ public class Weapon : MonoBehaviour, IDamageable
     
     private void OnEnable()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySoundEffect(_audioSource,
+                SoundsEffectsRepository.GetWeaponSoundEffect(_weaponType, ActionType.WeaponAction.Reload));
+        }
         _canShoot = true;
     }
 

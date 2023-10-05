@@ -4,8 +4,6 @@ using UnityEngine;
 //TODO: spare code duplication in HealthSystems by using Template Method or strategy patterns.
 public class EnemyHealth : MonoBehaviour, IHealthSystem
 {
-    private static readonly int DieAnimationTrigger = Animator.StringToHash("dieTrigger");
-    
     [SerializeField] private float _hitPoints = 100f;
     public bool IsDead { get; private set; } = false;
     
@@ -26,7 +24,7 @@ public class EnemyHealth : MonoBehaviour, IHealthSystem
         if (IsDead == false)
         {
             IsDead = true;
-            GetComponent<Animator>().SetTrigger(DieAnimationTrigger);
+            GetComponent<EnemyController>().AnimateEnemyDie();
         }
     }
 }

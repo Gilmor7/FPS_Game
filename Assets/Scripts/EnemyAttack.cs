@@ -1,4 +1,5 @@
 using Common;
+using DataTypes;
 using Managers;
 using UnityEngine;
 
@@ -31,6 +32,7 @@ public class EnemyAttack : MonoBehaviour, IDamageable
         if (_target != null)
         {
             EventManager.Instance.PublishCharacterGotHit(this, _target);
+            AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.Attack));
         }
     }
 }
