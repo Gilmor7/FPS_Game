@@ -33,11 +33,6 @@ namespace Managers
             }
         }
 
-        private void Start() //May be deleted after adding main menu
-        { 
-            StartGame();
-        }
-        
         private async void PlayStartingGameSfx()
         {
             await UniTask.Delay(1000);
@@ -75,6 +70,13 @@ namespace Managers
             StopGame();
         }
 
+        public void MainMenuStart()
+        {
+            _currentLevel = 1;
+            SceneManager.LoadSceneAsync(_currentLevel);
+            StartGame();
+        }
+
         private void HandleLevelCompletion()
         {
             StopGame();
@@ -86,7 +88,7 @@ namespace Managers
             }
             else
             {
-                //TODO: Go to main Menu
+                SceneManager.LoadSceneAsync(0);
             }
         }
 
@@ -109,7 +111,7 @@ namespace Managers
 
         private void StartNewLevel(int levelNumber)
         {
-            SceneManager.LoadScene(levelNumber - 1);
+            SceneManager.LoadScene(levelNumber);
             PlayerHUDManager.Instance.SetNewLevelScreen();
             StartGame();
         }
@@ -121,8 +123,7 @@ namespace Managers
 
         public void QuitLevel()
         {
-            Application.Quit();
-            //In the future goes back to Main Menu
+            SceneManager.LoadSceneAsync(0); //Get back to main menu
         }
 
         private void OnDestroy()
