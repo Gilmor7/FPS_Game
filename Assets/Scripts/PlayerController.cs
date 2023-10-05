@@ -126,11 +126,11 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.UpdateAmmoAmountDisplay(_currentWeapon.AmmoAmount);
     }
 
-    private void HandleHealthDamageTaken()
+    private void HandleHealthDamageTaken(float hp)
     {
         AudioManager.Instance.PlaySoundEffect(
             _audioSource, SoundsEffectsRepository.GetPlayerSoundEffect(ActionType.PlayerAction.GetHurt));
-        GameManager.Instance.HandlePlayerTakeDamage();
+        GameManager.Instance.HandlePlayerTakeDamage(hp);
     }
 
     private void OnDestroy()

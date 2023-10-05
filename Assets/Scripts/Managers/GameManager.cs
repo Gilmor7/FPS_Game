@@ -26,6 +26,7 @@ namespace Managers
 
                 EventManager.Instance.OnCharacterGotHit += HandleCharacterGotHit;
                 EventManager.Instance.OnLevelCompleted += HandleLevelCompletion;
+                SceneManager.sceneLoaded += OnSceneLoaded;
             }
             else
             {
@@ -54,19 +55,20 @@ namespace Managers
 
         public void UpdateAmmoAmountDisplay(int ammoAmount)
         {
-            PlayerHUDManager.Instance.SetAmmoAmountDisplay(ammoAmount);
+            PlayerUIManager.Instance.SetAmmoAmountDisplay(ammoAmount);
         }
 
-        public async void HandlePlayerTakeDamage()
+        public async void HandlePlayerTakeDamage(float hp)
         {
-            PlayerHUDManager.Instance.DisplayPlayerDamagedScreen();
+            PlayerUIManager.Instance.SetHpAmountDisplay(hp);
+            PlayerUIManager.Instance.DisplayPlayerDamagedScreen();
             await UniTask.Delay(300);
-            PlayerHUDManager.Instance.HidePlayerDamagedScreen();
+            PlayerUIManager.Instance.HidePlayerDamagedScreen();
         }
         
         public void HandlePlayerDeath()
         {
-            PlayerHUDManager.Instance.SetGameOverScreen();
+            PlayerUIManager.Instance.SetGameOverScreen();
             StopGame();
         }
 
@@ -106,13 +108,12 @@ namespace Managers
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             IsPlaying = true;
-            PlayStartingGameSfx();
         }
 
         private void StartNewLevel(int levelNumber)
         {
-            SceneManager.LoadScene(levelNumber);
-            PlayerHUDManager.Instance.SetNewLevelScreen();
+            SceneManager.LoadSceneAsync(levelNumber);
+            PlayerUIManager.Instance.SetNewLevelScreen();
             StartGame();
         }
 
@@ -124,6 +125,15 @@ namespace Managers
         public void QuitLevel()
         {
             SceneManager.LoadSceneAsync(0); //Get back to main menu
+        }
+
+        private void OnSceneLoaded(Scene scene,LoadSceneMode loadSceneMode)
+        {
+            if (scene.buildIndex > 0)
+            {
+                PlayerUIManager.Instance.SetLevelDisplay(_currentLevel);
+                PlayStartingGameSfx();
+            }
         }
 
         private void OnDestroy()

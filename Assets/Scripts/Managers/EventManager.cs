@@ -8,7 +8,7 @@ namespace Managers
     {
         // Define custom events
         public event Action OnAmmoAmountChanged;
-        public event Action OnPlayerHealthDamageTaken;
+        public event Action<float> OnPlayerHealthDamageTaken;
         public event Action<IDamageable, IHealthSystem> OnCharacterGotHit;
         public event Action OnLevelCompleted;
 
@@ -38,9 +38,9 @@ namespace Managers
             OnCharacterGotHit?.Invoke(attacker, characterHealthSystem);
         }
 
-        public void PublishPlayerHealthDamageTaken()
+        public void PublishPlayerHealthDamageTaken(float hp)
         {
-            OnPlayerHealthDamageTaken?.Invoke();
+            OnPlayerHealthDamageTaken?.Invoke(hp);
         }
         
         public void PublishLevelCompleted()

@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSystem
 
         if (!IsDead)
         {
-            EventManager.Instance.PublishPlayerHealthDamageTaken();
+            EventManager.Instance.PublishPlayerHealthDamageTaken(_hitPoints);
         }
 
         return IsDead;
