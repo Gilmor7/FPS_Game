@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3713407626504778039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.22
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6096273692514558113
 MonoBehaviour:
@@ -58,8 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 550d140d2fa7fc646b61c95cb6f52ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _floatingHeight: 0.02
-  _floatingSpeed: 8
+  _floatingHeight: 0.04
+  _floatingSpeed: 9
   _ammoAmount: 5
   _ammoType: 0
   _ammo: {fileID: 0}
