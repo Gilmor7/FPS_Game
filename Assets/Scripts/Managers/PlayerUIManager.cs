@@ -50,17 +50,27 @@ namespace Managers
 
         public void SetGameOverScreen()
         {
-            _weaponReticleCanvas.gameObject.SetActive(false);
-            _HudCanvas.gameObject.SetActive(false);
+            HideGamePlayUI();
             _gameOverCanvas.gameObject.SetActive(true);
         }
 
         public void SetNewLevelScreen()
         {
-            _weaponReticleCanvas.gameObject.SetActive(true);
-            _HudCanvas.gameObject.SetActive(true);
+            DisplayGameplayUI();
             _gameOverCanvas.gameObject.SetActive(false);
             _playerDamagedDisplayCanvas.gameObject.SetActive(false);
+        }
+
+        private void DisplayGameplayUI()
+        {
+            _weaponReticleCanvas.gameObject.SetActive(true);
+            _HudCanvas.gameObject.SetActive(true);
+        }
+        
+        public void HideGamePlayUI()
+        {
+            _weaponReticleCanvas.gameObject.SetActive(false);
+            _HudCanvas.gameObject.SetActive(false);
         }
         
         public void SetAmmoAmountDisplay(int ammoAmount)
