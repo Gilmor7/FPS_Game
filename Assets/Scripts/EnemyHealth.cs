@@ -1,7 +1,6 @@
 using Common;
 using UnityEngine;
 
-//TODO: spare code duplication in HealthSystems by using Template Method or strategy patterns.
 public class EnemyHealth : MonoBehaviour, IHealthSystem
 {
     [SerializeField] private float _hitPoints = 100f;

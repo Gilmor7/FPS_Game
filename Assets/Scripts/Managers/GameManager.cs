@@ -34,12 +34,6 @@ namespace Managers
             }
         }
 
-        private async void PlayStartingGameSfx()
-        {
-            await UniTask.Delay(1000);
-            AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.CreepyLaugh));
-        }
-
         private void HandleCharacterGotHit(IDamageable attacker, IHealthSystem healthSystem)
         {
             if (healthSystem != null)
@@ -68,19 +62,18 @@ namespace Managers
         
         public void HandlePlayerDeath()
         {
-            PlayerUIManager.Instance.SetGameOverScreen();
             StopGame();
+            PlayerUIManager.Instance.SetGameOverScreen();
         }
 
         public void MainMenuStart()
         {
-            _currentLevel = 1;
-            SceneManager.LoadSceneAsync(_currentLevel);
-            StartGame();
+            SceneManager.LoadScene(_currentLevel);
         }
 
         private void HandleLevelCompletion()
         {
+            PlayerUIManager.Instance.HideGamePlayUI();
             StopGame();
 
             if (_currentLevel < NumOfLevels)
@@ -90,7 +83,7 @@ namespace Managers
             }
             else
             {
-                SceneManager.LoadSceneAsync(0);
+                GetBackToMainMenu();
             }
         }
 
@@ -114,7 +107,6 @@ namespace Managers
         {
             SceneManager.LoadSceneAsync(levelNumber);
             PlayerUIManager.Instance.SetNewLevelScreen();
-            StartGame();
         }
 
         public void RestartLevel()
@@ -124,7 +116,7 @@ namespace Managers
 
         public void QuitLevel()
         {
-            SceneManager.LoadSceneAsync(0); //Get back to main menu
+            GetBackToMainMenu();
         }
 
         private void OnSceneLoaded(Scene scene,LoadSceneMode loadSceneMode)
@@ -132,8 +124,28 @@ namespace Managers
             if (scene.buildIndex > 0)
             {
                 PlayerUIManager.Instance.SetLevelDisplay(_currentLevel);
+                SetPlayerStartingHpDisplay();
+                StartGame();
                 PlayStartingGameSfx();
             }
+        }
+
+        private void SetPlayerStartingHpDisplay()
+        {
+            float hp = FindObjectOfType<PlayerHealth>().HP;
+            PlayerUIManager.Instance.SetHpAmountDisplay(hp);
+        }
+        
+        private async void PlayStartingGameSfx()
+        {
+            await UniTask.Delay(1000);
+            AudioManager.Instance.PlaySoundEffect(SoundsEffectsRepository.GetEnemySoundEffect(ActionType.EnemyAction.CreepyLaugh));
+        }
+
+        private void GetBackToMainMenu()
+        {
+            _currentLevel = 1;
+            SceneManager.LoadSceneAsync(0);
         }
 
         private void OnDestroy()

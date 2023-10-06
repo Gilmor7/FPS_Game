@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour, IHealthSystem
     [SerializeField] private float _hitPoints = 100f;
 
     public bool IsDead => (_hitPoints <= 0);
+    public float HP => _hitPoints;
 
     public bool TakeDamage(float damage)
     {
